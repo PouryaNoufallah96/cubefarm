@@ -1,6 +1,6 @@
 {
   "name": "cubefarm",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A cartoon 3D office where a team of AI coding agents works through your GitHub issues.",
   "keywords": [
     "claude-code",
@@ -34,10 +34,10 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "node scripts/office.mjs --dev",
+    "dev": "node api.js && node scripts/office.mjs --dev",
     "demo": "node scripts/office.mjs --dev --demo",
-    "build": "tsc --noEmit -p tsconfig.json && vite build && node scripts/build-server.mjs",
-    "start": "node scripts/office.mjs",
+    "build": "node api.js && tsc --noEmit -p tsconfig.json && vite build && node scripts/build-server.mjs",
+    "start": "node api.js && node scripts/office.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
